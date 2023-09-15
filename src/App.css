@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
+/* reset */
+html{font-size:7px;}
+@media all and (min-width:280px){html{font-size:7.777px;}}
+@media all and (min-width:290px){html{font-size:8.055px;}}
+@media all and (min-width:300px){html{font-size:8.333px;}}
+@media all and (min-width:310px){html{font-size:8.611px;}}
+@media all and (min-width:320px){html{font-size:9.166px;}}
+@media all and (min-width:330px){html{font-size:9.166px;}}
+@media all and (min-width:340px){html{font-size:9.444px;}}
+@media all and (min-width:350px){html{font-size:9.722px;}}
+@media all and (min-width:360px){html{font-size:10px;}}
+html,body {width:100%; height:100%;}
+body * {box-sizing: border-box;}
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,menu,nav,section,article,aside,dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption {margin:0;padding:0;}
+body{-webkit-text-size-adjust:none; word-wrap:break-word; word-break:break-all;}
+body.fixed{overflow-y: hidden;}
+body,input,select,textarea,button,pre {border:none; font-size:/*  */; font-family:/*  */; color:/*  */; }
+ul,ol,li{list-style-type:none;}
+table{ border-spacing:0; }
+img,fieldset{border:0;}
+address,cite,code{font-style:normal; font-weight:normal;}
+em, i{ font-style:normal; }
+label,img,input,select,textarea,button{vertical-align:middle;}
+.hide,legend{overflow: hidden; display:block; position:absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}
+main,header,section,nav,footer,aside,article,figure{display:block;}
+a{color:/*  */;text-decoration:none;}
+button { cursor: pointer; color: #d7dde9; border: .1rem solid #d7dde9; font-size:1.4rem; border-radius:.8rem; background-color: transparent; font-weight:400; }
+pre{ white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; white-space: pre-wrap; word-wrap: break-word; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.wrap {background:#111}
+.container {min-height: 100vh; padding-bottom:3rem;}
+header{width:100%; position: fixed; z-index:20;}
+.header_top h1 {color:#e7442c; text-align: center; font-size: 26px; padding:10px 0;}
+.header_btm ul {display: flex; justify-content: space-between; padding: 0 150px;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* margin */
+.martop_10 {margin-top:1rem;}
+.martop_20 {margin-top:2rem;}
+.marleft_10 {margin-left:1rem;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* line-height */
+.lh_15 {line-height:1.5;}
 
-.App-link {
-  color: #61dafb;
-}
+/* width */
+.w_140 {width:14rem;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* button */
+.btn {height:3.6rem;}
+
+.main_img {height:60vh; min-height:35.0rem; background-size:cover; background-position: center; position: relative; transition:all .5s;}
+.main_img::after{display:block; width: 100%; height: 100%; content: ""; clear: both; background:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));}
+.main_desc {position: absolute; bottom:3.0rem; color:#fff; width: 128rem; left:50%; transform:translate(-50%); }
+.main_desc h2 {font-size: 2.6rem;}
+.main_desc p {font-size:1.2rem; margin-top:1.0rem;max-width: 60.0rem;}
+
+.movie_list {color: #fff;  max-width: 128rem; margin: auto; transition:all .3s;}
+.movie_list h2 {font-size:2.4rem; padding:2rem 0;}
+.movie_list hr {background: #ccc; height:.1rem; border: 0;}
+
+.grid_card {margin-top: 3.0rem;}
+.grid_card img {width:100%;}
+
+.btn_box {text-align:center; margin-top: 2rem;}
+.more_btn { width: 10rem; height:3.6rem;}
+
+.blur_bg {background-size: cover; background-position:center; filter: blur(5px); width: 100%; height:100vh; position:absolute;transform: scale(1.2); z-index:-1;}
+.black{width: 100%; height: 100vh; background:rgba(0,0,0,0.5); position:absolute;}
+.movie_info {display: flex; padding:4rem; width: 128rem; height:70rem; color:#fff; background:rgba(0,0,0,0.6); position: absolute; transform: translate(-50%, -50%); left:50%; top:50%; overflow-y:scroll;}
+.movie_info::-webkit-scrollbar{width: 1.8rem; height: .4rem;}
+.movie_info::-webkit-scrollbar-thumb{background-color: #b0b5c0; border-radius: 10.0rem; background-clip:padding-box; border:.7rem solid transparent;}
+.movie_info::-webkit-scrollbar-track{background-color: transparent; border-radius: 10.0rem; background-clip: padding-box; border: 1.8rem solid transparent;}
+
+.movie_img_box {width:30rem; min-width:30rem;}
+.movie_img_box img {width: 100%;}
+.movie_desc {margin-left: 4rem;}
+.movie_desc h2 {font-size:2.6rem;}
+.movie_desc span {font-size:1.6rem; display: block;}
+.movie_desc .genre_list {display: flex; flex-wrap: wrap;}
+.movie_desc .genre_list li {margin-left:1rem; text-align: center;}
+.movie_desc .genre_list li {font-size: 1.4rem; border:.1rem solid rgba(255,255,255, 0.4); color:#dadada; background:rgba(255,255,255,0.1); padding:0 1.5rem; height:3rem; line-height:2.8rem; border-radius: 3rem;}
+.movie_desc p {font-size: 1.6rem;}
+/* .movie_desc .vote {height:.8rem; background:rgba(255,255,255,0.3); border-radius:.8rem; overflow:hidden;}
+.movie_desc .vote p {height:.8rem; background: #e22f14;}
+.movie_desc .vote_txt {text-align: right; font-weight: bold; font-size: 2rem;} */
+
+.movie_desc .overview {max-height:10rem; height:10rem;overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;}
+.overview::-webkit-scrollbar {display: none; }
+
+.movie_desc .star_rate_box {display:flex; align-items: center; justify-content:flex-end; margin-top: 1rem;}
+.movie_desc .star_rate_box h3 {font-size:2.2rem; font-weight:normal; margin-right: 2rem;}
+.movie_desc .star_rate {display:flex;}
+
+@media all and (max-width:1280px) {
+  .movie_list {padding:0 2rem;}
+  .main_desc {width: auto; left:0; transform: translateX(0); padding:0 2rem;}
+  .movie_info {width:calc(100% - 8rem);}
+
+} 
+@media all and (max-width:1028px) {
+  .movie_img_box {max-height:49rem; margin: auto;}
+  .movie_info {display: block;}
+
+} 
+@media all and (max-width:768px) {
+  .main_img {height: 30rem;}
+  .main_desc h2 {font-size: 2.2rem;}
+  .movie_desc .genre_list li {margin-left:0;}
 }
