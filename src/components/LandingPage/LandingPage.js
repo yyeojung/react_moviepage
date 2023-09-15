@@ -66,6 +66,7 @@ function LandingPage() {
                 </div>
                 <div className='btn_box'>
                     <button className='more_btn' onClick={loadMoreMovie}>Load More</button>
+                    <button></button>
                 </div>
 
             </div>
