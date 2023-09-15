@@ -9,10 +9,10 @@ import MovieDetail from './components/MovieDetail/MovieDetail';
 
 function App() {
   return (
-    <Router>
+    <Router basepath={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path={process.env.PUBLIC_URL + "/"} element={<LandingPage/>}></Route>
-        <Route path={process.env.PUBLIC_URL + "/movie/:movieId"} element={<MovieDetail/>}></Route>
+        <Route path={"/"} element={<LandingPage/>}></Route>
+        <Route path={"/movie/:movieId"} element={<MovieDetail/>}></Route>
       </Routes>
     </Router>
   );
