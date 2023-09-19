@@ -1,6 +1,6 @@
 # 230919
 영화 wish 하트 아이콘 추가
-![스크린샷 2023-09-19 114747](https://github.com/yyeojung/react_moviepage/assets/144653702/8c00229c-ce00-4da3-9352-e7d267b806f5)
+![image](https://github.com/yyeojung/react_moviepage/assets/144653702/f39bf16c-4a4c-4116-85a1-6d3e869ed1b5)
 
 상세페이지 등장인물 추가(리액트-슬릭 사용)
 ![스크린샷 2023-09-19 115037](https://github.com/yyeojung/react_moviepage/assets/144653702/e01eb9ff-4cf0-476c-bbf1-4fdd6eb00128)
