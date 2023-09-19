@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { API_KEY, API_URL } from '../../API'
 
 function StarRating(props) {
     const AVR_RATE = Math.round(props.voteAverage * 10) ; // 평점

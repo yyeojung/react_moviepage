@@ -1,16 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 import { API_URL, API_KEY, API_IMG } from "../../API"
+import {Row} from 'antd';
+
 import MainImg from "./MainImg";
 import Header from '../NavBar/Header';
 import GridCards from "../common/GridCards";
-import {Row} from 'antd';
+import Loading from '../common/Loading';
+
 
 
 function LandingPage() {
+    // const [Loading, setLoading] = useState(true); 로딩 추가할거임,,
     const [Movies, setMovies] = useState([]); //최신 영화 목록
     const [MainMovieImg, setMainMovieImg] = useState(null); //setMainMovieImg(response.results[1])영화 정보
     const [CurrentPage, setCurrentPage] = useState(0); //버튼 불러오기 영화 목록
+    const [isLoading, setIsLoading] = useState(true); 
 
 
     const fetchMovies = (endpoint) => {
@@ -19,11 +24,12 @@ function LandingPage() {
         .then((response) => {
             if (CurrentPage === 0) { 
                 setMovies([...response.results]);
-                setMainMovieImg(response.results[0]);//페이지 1의 첫번째 인기 영화!
+                setMainMovieImg(response.results[2]);//페이지 1의 첫번째 인기 영화!
             } else { // 페이지가 추가되면 기존의 목록들 뒤에 추가하기, 영화가 추가될 때마다 메인 영화 이미지가 바껴서 코드 수정 
                 setMovies([...Movies, ...response.results]);
             } 
             setCurrentPage(response.page)
+            setIsLoading(false)
         })
     }
 
@@ -36,9 +42,13 @@ function LandingPage() {
         const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=ko-KR&page=${CurrentPage + 1}`;
         fetchMovies(endpoint)
     }
+
     return (
         <div className="wrap">
             <Header></Header>
+            {isLoading ? (
+                <Loading/>
+            ) : (
             <div className="container">
                 {/* 메인 이미지 */}
                 {MainMovieImg && (
@@ -66,10 +76,11 @@ function LandingPage() {
                 </div>
                 <div className='btn_box'>
                     <button className='more_btn' onClick={loadMoreMovie}>Load More</button>
-                    <button></button>
                 </div>
 
             </div>
+
+            )}
         </div>
     )
 }
