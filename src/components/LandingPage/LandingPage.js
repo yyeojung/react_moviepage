@@ -24,7 +24,7 @@ function LandingPage() {
         .then((response) => {
             if (CurrentPage === 0) { 
                 setMovies([...response.results]);
-                setMainMovieImg(response.results[2]);//페이지 1의 첫번째 인기 영화!
+                setMainMovieImg(response.results[0]);//페이지 1의 첫번째 인기 영화!
             } else { // 페이지가 추가되면 기존의 목록들 뒤에 추가하기, 영화가 추가될 때마다 메인 영화 이미지가 바껴서 코드 수정 
                 setMovies([...Movies, ...response.results]);
             } 
